@@ -88,7 +88,7 @@ def ble_parser(self, data):
 def hci_get_mac(interface_list=[0]):
     # Get dict of available bluetooth interfaces, returns hci and mac
     btaddress_dict = {}
-    output = subprocess.run(["sudo /usr/bin/hciconfig"], stdout=subprocess.PIPE).stdout.decode("utf-8")
+    output = subprocess.run(['hciconfig'], stdout=subprocess.PIPE).stdout.decode("utf-8")
 
     for interface in interface_list:
         hci_id = "hci{}".format(interface)
